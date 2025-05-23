@@ -5,4 +5,4 @@ torchvision
 scikit-learn
 Pillow
 moviepy
-openai
+imageio
