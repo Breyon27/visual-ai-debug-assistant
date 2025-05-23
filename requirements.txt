@@ -1,0 +1,6 @@
+streamlit
+open_clip_torch
+torch
+torchvision
+scikit-learn
+Pillow

@@ -1,0 +1,2 @@
+frame,prompt,fix
+frame_1.jpg,Player falls through ground,Add BoxCollider2D to the player object.
