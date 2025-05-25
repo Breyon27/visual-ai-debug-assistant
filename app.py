@@ -154,5 +154,6 @@ if uploaded_file:
             st.success(fix_log[best_match]["fix"])
         else:
             st.warning("No fix found. Trying GPT-4o...")
-            gpt_fix = generate_ai_fix(image, question)
+            gpt_fix = generate_ai_fix(image, question, frame_name="uploaded_frame.jpg")
+            gpt_fix = generate_ai_fix(preview, question, frame_name=f"video_frame_{idx+1}.jpg")
             st.info(f"🧠 AI Fix:\n\n{gpt_fix}")
