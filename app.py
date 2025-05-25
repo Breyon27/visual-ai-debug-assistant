@@ -79,7 +79,8 @@ def generate_ai_fix(image: Image.Image, question: str, frame_name="unknown"):
         image_data = base64.b64encode(img_file.read()).decode("utf-8")
 
     try:
-        response = openai.chat.completions.create(
+        response = client.chat.completions.create(
+
             model="gpt-4o",
             messages=[
                 {"role": "system", "content": "You are a Unity game development expert who helps debug gameplay based on screenshots."},
