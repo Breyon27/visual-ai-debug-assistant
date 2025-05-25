@@ -19,7 +19,10 @@ MODEL_NAME = "ViT-B-32"
 PRETRAINED = "laion2b_s34b_b79k"
 
 # OpenAI key
-openai.api_key = os.getenv("OPENAI_API_KEY")
+from openai import OpenAI
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
 
 # Load model
 @st.cache_resource
