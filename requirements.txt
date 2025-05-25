@@ -6,3 +6,4 @@ scikit-learn
 Pillow
 moviepy
 imageio
+openai
