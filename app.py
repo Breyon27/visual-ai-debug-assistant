@@ -69,7 +69,7 @@ def extract_frames_from_video(video_path, interval=2):
     reader.close()
     return frames
 
-def generate_ai_fix(image: Image.Image, question: str):
+def generate_ai_fix(image: Image.Image, question: str, frame_name="unknown"):
     buffered = tempfile.NamedTemporaryFile(delete=False, suffix=".jpg")
     image.save(buffered.name)
     with open(buffered.name, "rb") as img_file:
@@ -85,7 +85,9 @@ def generate_ai_fix(image: Image.Image, question: str):
             ],
             max_tokens=500
         )
-        return response.choices[0].message.content.strip()
+        fix = response.choices[0].message.content.strip()
+        log_ai_fix(frame_name, question, fix)
+        return fix
     except Exception as e:
         return f"Error generating AI fix: {e}"
 
