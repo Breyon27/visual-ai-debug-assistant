@@ -9,7 +9,7 @@ import csv
 import tempfile
 import os
 import base64
-from openai import openai
+import openai
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Config
